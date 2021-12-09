@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Companies</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+        }
+        .company:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="company" th:each="company : ${companies}">
+        <div class="name" th:text="${company.name}"></div>
+        <div class="address" th:text="${company.address}"></div>
+        <div class="contact" th:if="${company.contact}">
+            <div class="email" th:text="${company.contact.email}" th:if="${company.contact.email}"></div>
+            <div class="www" th:text="${company.contact.www}" th:if="${company.contact.www}"></div>
+            <div class="number" th:text="${(company.contact.phone.area != null) ? (company.contact.phone.area + company.contact.phone.number) : (company.contact.phone.number)}" th:if="${company.contact.phone}"></div>
+        </div>
+    </div>
+</body>
+</html>
