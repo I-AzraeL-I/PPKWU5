@@ -21,6 +21,15 @@
             <div class="www" th:text="${company.contact.www}" th:if="${company.contact.www}"></div>
             <div class="number" th:text="${(company.contact.phone.area != null) ? (company.contact.phone.area + company.contact.phone.number) : (company.contact.phone.number)}" th:if="${company.contact.phone}"></div>
         </div>
+        <form action="#" method="POST" th:action="@{/generate}">
+            <input type="hidden" th:name="name" th:value="${company.name}"/>
+            <input type="hidden" th:name="address" th:value="${company.address}"/>
+            <input type="hidden" th:name="contact.email" th:value="${company.contact.email}" th:if="${company.contact} and ${company.contact.email}"/>
+            <input type="hidden" th:name="contact.www" th:value="${company.contact.www}" th:if="${company.contact} and ${company.contact.www}"/>
+            <input type="hidden" th:name="contact.phone.number" th:value="${company.contact.phone.number}" th:if="${company.contact} and ${company.contact.phone}"/>
+            <input type="hidden" th:name="contact.phone.area" th:value="${company.contact.phone.area}" th:if="${company.contact} and ${company.contact.phone}"/>
+            <button type="submit">vCard</button>
+        </form>
     </div>
 </body>
 </html>
