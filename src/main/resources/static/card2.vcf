@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:4.0
+PRODID:ez-vcard 0.11.3
+ADR;LABEL="ul. Bagno 2, 00-112 Warszawa Śródmieście, mazowieckie":;;;;;;
+FN:Archibald sp. z o.o.
+URL:https://www.archibald.pl/
+EMAIL:biuro@archibald.pl
+TEL:228287676
+END:VCARD

@@ -1,0 +1,10 @@
+BEGIN:VCARD
+VERSION:4.0
+PRODID:ez-vcard 0.11.3
+ADR;LABEL="al. Solidarności 101d, 00-144 Warszawa Śródmieście, mazowieckie"
+ :;;;;;;
+FN:25 Społeczne Liceum Ogólnokształcące
+URL:http://okonska.edu.pl/
+EMAIL:info@okonska.edu.pl
+TEL:226544550
+END:VCARD
