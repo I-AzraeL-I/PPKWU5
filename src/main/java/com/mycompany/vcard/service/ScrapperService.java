@@ -3,6 +3,7 @@ package com.mycompany.vcard.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mycompany.vcard.dto.Company;
 import com.mycompany.vcard.dto.Data;
+import com.mycompany.vcard.exception.ParserException;
 import lombok.RequiredArgsConstructor;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -10,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,10 +38,8 @@ public class ScrapperService {
                     .distinct()
                     .collect(Collectors.toUnmodifiableList());
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new ParserException(url);
         }
-
-        return Collections.emptyList();
     }
 
     private String getDataJson(String path) throws IOException {
